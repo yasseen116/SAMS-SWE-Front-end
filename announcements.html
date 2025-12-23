@@ -198,20 +198,49 @@
             text-transform: uppercase;
             letter-spacing: -0.5px;
         }
+        .logo-sub {
+            font-size: 0.75rem;
+            color: var(--slate-500);
+            font-weight: 500;
+            text-transform: uppercase;
+        }
 
-        .nav-menu {
-            display: flex;
-            gap: 2rem;
+        .nav-links {
+            display: none;
             align-items: center;
+            gap: 2rem;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            font-size: 1.5rem;
+            color: var(--brand-800);
         }
 
         .nav-link {
-            color: var(--slate-600);
-            font-weight: 500;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--slate-700);
+            padding: 0.5rem 0;
+            position: relative;
             transition: color 0.2s;
         }
         .nav-link:hover {
             color: var(--brand-700);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--brand-700);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
@@ -226,6 +255,7 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
+            color: var(--brand-50);
         }
 
         .hero-subtitle {
@@ -317,46 +347,32 @@
 
         /* Footer */
         .footer {
-            background-color: var(--slate-900);
+            background-color: var(--brand-900);
             color: var(--slate-300);
-            padding: 3rem 0 1rem;
-            margin-top: 4rem;
+            padding: 4rem 0 2rem;
+            font-size: 0.9rem;
         }
-
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 1fr;
+            gap: 3rem;
         }
-
         .footer-col h4 {
             color: var(--white);
-            margin-bottom: 1rem;
-            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .footer-links a {
-            color: var(--slate-300);
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a:hover { color: var(--white); text-decoration: underline; }
+        
         .footer-bottom {
-            border-top: 1px solid var(--slate-700);
-            padding-top: 1rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
             text-align: center;
-            font-size: 0.9rem;
-            color: var(--slate-400);
+            font-size: 0.85rem;
         }
 
         /* Responsive */
@@ -377,29 +393,54 @@
                 font-size: 1.8rem;
             }
         }
+
+        /* --- Media Queries --- */
+        @media (min-width: 768px) {
+            .nav-links { display: flex; }
+            .mobile-menu-btn { display: none; }
+            .footer-grid { grid-template-columns: repeat(4, 1fr); }
+        }
     </style>
 </head>
 <body>
 
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container" style="width: 100%; height: 100%;">
-            <div class="nav-container">
-                <a href="test2.html" class="logo">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <div class="logo-text">
-                        <span class="logo-main">FCI.SE</span>
-                    </div>
-                </a>
-                <div class="nav-menu">
-                    <a href="test2.html#academics" class="nav-link">Career Paths</a>
-                    <a href="courses.html" class="nav-link">Courses</a>
-                    <a href="study-plan.html" class="nav-link">Study Plan</a>
-                    <a href="test2.html#news" class="nav-link">News</a>
-                    <a href="announcements.html" class="nav-link" style="color: var(--brand-700); font-weight: 700;">Announcements</a>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <a href="test2.html" class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div class="logo-text">
+                    <span class="logo-main">SE Department</span>
+                    <span class="logo-sub">Faculty of Computers & Info</span>
                 </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="nav-links">
+                <a href="aboutus.html" class="nav-link">About Dept</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="study-plan.html" class="nav-link">Study Plan</a>
+                <a href="test2.html#people" class="nav-link">People</a>
+                <a href="announcements.html" class="nav-link" style="color: var(--brand-700); font-weight: 700;">Announcements</a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (Hidden) -->
+        <div class="hidden" id="mobile-menu" style="position:absolute; top:80px; left:0; width:100%; background:white; border-bottom:1px solid #eee; padding:1rem;">
+            <a href="aboutus.html" style="display:block; padding:0.5rem 1rem; color:var(--slate-700);">About Dept</a>
+            <a href="courses.html" style="display:block; padding:0.5rem 1rem; color:var(--slate-700);">Courses</a>
+            <a href="study-plan.html" style="display:block; padding:0.5rem 1rem; color:var(--slate-700);">Study Plan</a>
+            <a href="test2.html#academics" style="display:block; padding:0.5rem 1rem; color:var(--slate-700);">Career Paths</a>
+            <a href="test2.html#people" style="display:block; padding:0.5rem 1rem; color:var(--slate-700);">People</a>
+            <a href="announcements.html" style="display:block; padding:0.5rem 1rem; color:var(--slate-700);">Announcements</a>
+            <a href="test2.html#portal" style="display:block; margin-top:1rem; padding:0.5rem 1rem; background:var(--brand-600); color:white; text-align:center; border-radius:4px;">Student Portal</a>
         </div>
     </nav>
 
@@ -538,37 +579,47 @@
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="test2.html">Home</a></li>
-                        <li><a href="test2.html#academics">Career Paths</a></li>
-                        <li><a href="test2.html#people">Faculty</a></li>
-                        <li><a href="announcements.html">Announcements</a></li>
+                        <li><a href="#">Academic Calendar</a></li>
+                        <li><a href="#">Student Handbook</a></li>
+                        <li><a href="#">Research Publications</a></li>
+                        <li><a href="#">Career Center</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Support</h4>
+                    <h4>Departments</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Student Services</a></li>
-                        <li><a href="#">Academic Advising</a></li>
-                        <li><a href="#">Career Services</a></li>
-                        <li><a href="#">IT Support</a></li>
+                        <li><a href="#">Computer Science</a></li>
+                        <li><a href="#">Information Systems</a></li>
+                        <li><a href="#">Software Engineering</a></li>
+                        <li><a href="#">Basic Sciences</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h4>Contact Us</h4>
                     <ul class="footer-links">
-                        <li><a href="mailto:contact@fci.edu">contact@fci.edu</a></li>
-                        <li><a href="tel:+201234567890">+20 123 456 7890</a></li>
-                        <li>Cairo, Egypt</li>
+                        <li><i class="fa-solid fa-location-dot"></i> University Campus, Gate 4</li>
+                        <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@fci.edu</li>
                     </ul>
                 </div>
             </div>
-
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 Faculty of Computers & Artificial Intelligence - Software Engineering Department. All rights reserved.</p>
+                &copy; 2025 Faculty of Computers & Artificial Intelligence. All Rights Reserved.
             </div>
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            });
+        }
+    </script>
 </body>
 </html>

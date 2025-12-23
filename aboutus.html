@@ -187,6 +187,8 @@
         .logo-sub {
             font-size: 0.75rem;
             color: var(--slate-500);
+            font-weight: 500;
+            text-transform: uppercase;
         }
 
         .nav-links {
@@ -196,12 +198,28 @@
         }
 
         .nav-link {
-            color: var(--slate-600);
-            font-weight: 500;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--slate-700);
+            padding: 0.5rem 0;
+            position: relative;
             transition: color 0.2s;
         }
         .nav-link:hover {
             color: var(--brand-700);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--brand-700);
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
@@ -218,6 +236,7 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
+            color: var(--brand-50);
         }
 
         .hero-subtitle {
@@ -354,46 +373,32 @@
 
         /* Footer */
         .footer {
-            background-color: var(--slate-900);
+            background-color: var(--brand-900);
             color: var(--slate-300);
-            padding: 3rem 0 1rem;
-            margin-top: 4rem;
+            padding: 4rem 0 2rem;
+            font-size: 0.9rem;
         }
-
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: 1fr;
+            gap: 3rem;
         }
-
         .footer-col h4 {
             color: var(--white);
-            margin-bottom: 1rem;
-            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .footer-links a {
-            color: var(--slate-300);
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a:hover { color: var(--white); text-decoration: underline; }
+        
         .footer-bottom {
-            border-top: 1px solid var(--slate-700);
-            padding-top: 1rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
             text-align: center;
-            font-size: 0.9rem;
-            color: var(--slate-400);
+            font-size: 0.85rem;
         }
 
         /* Responsive */
@@ -417,6 +422,11 @@
             .column-icon i {
                 font-size: 5rem;
             }
+        }
+
+        /* --- Media Queries --- */
+        @media (min-width: 768px) {
+            .footer-grid { grid-template-columns: repeat(4, 1fr); }
         }
     </style>
 </head>
@@ -694,7 +704,7 @@
                     <div class="logo" style="color: white; margin-bottom: 1rem;">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <div class="logo-text">
-                            <span class="logo-main">SE Department</span>
+                            <span class="logo-main">FCI.SE</span>
                         </div>
                     </div>
                     <p style="color: var(--slate-300); line-height: 1.6;">
@@ -706,36 +716,35 @@
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="test2.html">Home</a></li>
-                        <li><a href="aboutus.html">About Department</a></li>
-                        <li><a href="announcements.html">Announcements</a></li>
-                        <li><a href="test2.html#people">Faculty</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Resources</h4>
-                    <ul class="footer-links">
                         <li><a href="#">Academic Calendar</a></li>
                         <li><a href="#">Student Handbook</a></li>
-                        <li><a href="#">Career Services</a></li>
-                        <li><a href="#">IT Support</a></li>
+                        <li><a href="#">Research Publications</a></li>
+                        <li><a href="#">Career Center</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h4>Departments</h4>
                     <ul class="footer-links">
-                        <li><a href="mailto:contact@fci.edu">contact@fci.edu</a></li>
-                        <li><a href="tel:+201234567890">+20 123 456 7890</a></li>
-                        <li>Cairo, Egypt</li>
-                        <li><a href="#">Office Hours</a></li>
+                        <li><a href="#">Computer Science</a></li>
+                        <li><a href="#">Information Systems</a></li>
+                        <li><a href="#">Software Engineering</a></li>
+                        <li><a href="#">Basic Sciences</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-location-dot"></i> University Campus, Gate 4</li>
+                        <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@fci.edu</li>
                     </ul>
                 </div>
             </div>
-
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 Faculty of Computers & Artificial Intelligence - Software Engineering Department. All rights reserved.</p>
+                &copy; 2025 Faculty of Computers & Artificial Intelligence. All Rights Reserved.
             </div>
         </div>
     </footer>
