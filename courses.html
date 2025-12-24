@@ -41,6 +41,15 @@
     .section-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.5rem; }
     .section-desc { color: var(--slate-500); max-width: 700px; margin: 0 auto; }
 
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: 600; font-size: 0.9rem; transition: all 0.2s ease; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; border: none; font-family: inherit; }
+    .btn-outline { background-color: transparent; color: var(--brand-700); border: 2px solid var(--brand-700); }
+    .btn-outline:hover { background-color: var(--brand-700); color: var(--white); }
+    .btn-outline.active { background-color: var(--brand-700); color: var(--white); }
+
+    /* Layout Switch */
+    .layout-switch { display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem; }
+
     .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
     .course-card { background: var(--white); border-radius: 10px; border-top: 4px solid var(--brand-600); padding: 1.75rem; box-shadow: 0 4px 14px rgba(0,0,0,0.06); transition: transform .2s ease, box-shadow .2s ease; }
     .course-card:hover { transform: translateY(-4px); box-shadow: 0 10px 22px rgba(0,0,0,0.1); }
@@ -52,44 +61,12 @@
     .course-prereq { background: var(--slate-100); border: 1px solid var(--slate-200); border-radius: 6px; padding: .5rem .75rem; color: var(--slate-600); font-size: .9rem; margin-top: .75rem; }
     .course-prereq b { color: var(--slate-800); }
 
-    .footer {
-            background-color: var(--brand-900);
-            color: var(--slate-300);
-            padding: 4rem 0 2rem;
-            font-size: 0.9rem;
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-        }
-        .footer-col h4 {
-            color: var(--white);
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .footer-links li { margin-bottom: 0.8rem; }
-        .footer-links a:hover { color: var(--white); text-decoration: underline; }
-        
-        .footer-bottom {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-    /* Buttons */
-    .btn { display:inline-flex; align-items:center; justify-content:center; padding:0.6rem 1rem; border-radius:6px; font-weight:600; font-size:0.95rem; transition: all .2s ease; }
-    .btn-outline { background: transparent; color: var(--brand-700); border: 2px solid var(--brand-700); }
-    .btn-outline:hover { background: var(--brand-700); color: var(--white); }
-    .btn-primary { background: var(--brand-700); color: var(--white); }
-
-    /* Layout Switch */
-    .layout-switch { display:flex; align-items:center; justify-content:center; gap: .75rem; margin: 1rem 0 2rem; }
-    .layout-switch .btn.active { background: var(--brand-700); color: var(--white); border-color: var(--brand-700); }
+    .footer { background-color: var(--brand-900); color: var(--slate-300); padding: 4rem 0 2rem; font-size: 0.9rem; }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+    .footer-col h4 { color: var(--white); margin-bottom: 1.5rem; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .footer-links li { margin-bottom: 0.8rem; }
+    .footer-links a:hover { color: var(--white); text-decoration: underline; }
+    .footer-bottom { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; font-size: 0.85rem; }
 
     /* Table Layout */
     .courses-table table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.06); }
@@ -102,9 +79,9 @@
     @media (max-width:768px){ .hero-title{font-size:2rem;} .section-title{font-size:1.8rem;} }
 
     /* --- Media Queries --- */
-        @media (min-width: 768px) {
-            .footer-grid { grid-template-columns: repeat(4, 1fr); }
-        }
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: 1.2fr 1fr 1.6fr; }
+    }
   </style>
 </head>
 <body>
@@ -384,57 +361,50 @@
     })();
   </script>
 
-  <!-- Footer -->
-  <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo" style="color: white; margin-bottom: 1rem;">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <div class="logo-text">
-                            <span class="logo-main">FCI.SE</span>
-                        </div>
-                    </div>
-                    <p style="color: var(--slate-300); line-height: 1.6;">
-                        Faculty of Computers & Artificial Intelligence.<br>
-                        Building Future Leaders.
-                    </p>
-                </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="logo" style="color: white; margin-bottom: 1rem;">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div class="logo-text">
+                <span class="logo-main">SE Department</span>
+                <span class="logo-sub" style="color: var(--slate-300);">Faculty of Computers & Info</span>
+              </div>
+            </div>
+            <p style="color: var(--slate-300); line-height: 1.6;">
+              Faculty of Computers & Info
+            </p>
+          </div>
                 
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Academic Calendar</a></li>
-                        <li><a href="#">Student Handbook</a></li>
-                        <li><a href="#">Research Publications</a></li>
-                        <li><a href="#">Career Center</a></li>
-                    </ul>
-                </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="aboutus.html">About Department</a></li>
+              <li><a href="courses.html">Courses</a></li>
+              <li><a href="study-plan.html">Study Plan</a></li>
+              <li><a href="announcements.html">Announcements</a></li>
+            </ul>
+          </div>
 
-                <div class="footer-col">
-                    <h4>Departments</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Computer Science</a></li>
-                        <li><a href="#">Information Systems</a></li>
-                        <li><a href="#">Software Engineering</a></li>
-                        <li><a href="#">Basic Sciences</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li><i class="fa-solid fa-location-dot"></i> University Campus, Gate 4</li>
-                        <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fa-solid fa-envelope"></i> info@fci.edu</li>
-                    </ul>
-                </div>
+          <div class="footer-col">
+            <h4>Our Location</h4>
+            <div style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+              <iframe
+                src="https://www.google.com/maps?q=Sadat%20Academy%20for%20Management%20Sciences%20Maadi&output=embed"
+                style="border:0; width:100%; height:280px;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            
-            <div class="footer-bottom">
-                &copy; 2025 Faculty of Computers & Artificial Intelligence. All Rights Reserved.
-            </div>
+          </div>
         </div>
+            
+        <div class="footer-bottom">
+          &copy; 2025 Faculty of Computers & Info. All Rights Reserved.
+        </div>
+      </div>
     </footer>
 </body>
 </html>

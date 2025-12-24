@@ -224,7 +224,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--brand-700) 0%, var(--brand-900) 100%);
+            background: url('static/Images/page-header-swpage.jpg') center/cover no-repeat;
             color: var(--white);
             padding: 4rem 0;
             text-align: center;
@@ -426,7 +426,7 @@
 
         /* --- Media Queries --- */
         @media (min-width: 768px) {
-            .footer-grid { grid-template-columns: repeat(4, 1fr); }
+            .footer-grid { grid-template-columns: 1.2fr 1fr 1.6fr; }
         }
     </style>
 </head>
@@ -704,47 +704,38 @@
                     <div class="logo" style="color: white; margin-bottom: 1rem;">
                         <i class="fa-solid fa-graduation-cap"></i>
                         <div class="logo-text">
-                            <span class="logo-main">FCI.SE</span>
+                            <span class="logo-main">SE Department</span>
+                            <span class="logo-sub" style="color: var(--slate-300);">Faculty of Computers & Info</span>
                         </div>
                     </div>
                     <p style="color: var(--slate-300); line-height: 1.6;">
-                        Faculty of Computers & Artificial Intelligence.<br>
-                        Building Future Leaders.
+                        Faculty of Computers & Info
                     </p>
                 </div>
-                
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Academic Calendar</a></li>
-                        <li><a href="#">Student Handbook</a></li>
-                        <li><a href="#">Research Publications</a></li>
-                        <li><a href="#">Career Center</a></li>
+                        <li><a href="aboutus.html">About Department</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="study-plan.html">Study Plan</a></li>
+                        <li><a href="announcements.html">Announcements</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-col">
-                    <h4>Departments</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Computer Science</a></li>
-                        <li><a href="#">Information Systems</a></li>
-                        <li><a href="#">Software Engineering</a></li>
-                        <li><a href="#">Basic Sciences</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-links">
-                        <li><i class="fa-solid fa-location-dot"></i> University Campus, Gate 4</li>
-                        <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fa-solid fa-envelope"></i> info@fci.edu</li>
-                    </ul>
+                    <h4>Our Location</h4>
+                        <div style="border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                        <iframe
+                            src="https://www.google.com/maps?q=Sadat%20Academy%20for%20Management%20Sciences%20Maadi&output=embed"
+                            style="border:0; width:100%; height:280px;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                &copy; 2025 Faculty of Computers & Artificial Intelligence. All Rights Reserved.
+                &copy; 2025 Faculty of Computers & Info. All Rights Reserved.
             </div>
         </div>
     </footer>
