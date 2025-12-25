@@ -192,3 +192,16 @@
     .hero-title { font-size: 2rem; }
     .section-title { font-size: 1.8rem; }
 }
+
+/* Footer fixes for courses page */
+.footer {
+    text-align: left;
+}
+
+.footer .footer-grid {
+    text-align: left;
+}
+
+.footer .footer-col {
+    text-align: left;
+}
