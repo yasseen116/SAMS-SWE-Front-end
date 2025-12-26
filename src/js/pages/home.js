@@ -188,6 +188,51 @@ export function renderHome() {
             </div>
         </div>
     </section>
+
+    <!-- Announcements Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Announcements</h2>
+                <p class="section-desc">Stay updated with the latest news and events from our department</p>
+            </div>
+
+            <div class="announcements-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div class="announcement-card" style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--brand-500); box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <span class="announcement-badge" style="display: inline-block; padding: 0.25rem 0.75rem; background: #3b82f6; color: white; border-radius: 4px; font-size: 0.875rem; margin-bottom: 0.75rem;">Academic</span>
+                    <h3 style="margin: 0.5rem 0; font-size: 1.25rem; color: var(--slate-900);">Fall 2024 Registration Open</h3>
+                    <p style="color: var(--slate-600); margin-bottom: 0.75rem;">Registration for Fall 2024 semester is now open. Students can register through the online portal.</p>
+                    <div style="color: var(--slate-500); font-size: 0.875rem;">
+                        <i class="fa-solid fa-calendar"></i> Posted on Dec 15, 2024
+                    </div>
+                </div>
+
+                <div class="announcement-card" style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #10b981; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <span class="announcement-badge" style="display: inline-block; padding: 0.25rem 0.75rem; background: #10b981; color: white; border-radius: 4px; font-size: 0.875rem; margin-bottom: 0.75rem;">Events</span>
+                    <h3 style="margin: 0.5rem 0; font-size: 1.25rem; color: var(--slate-900);">AI Workshop Series</h3>
+                    <p style="color: var(--slate-600); margin-bottom: 0.75rem;">Join our weekly AI workshop series covering machine learning fundamentals and advanced topics.</p>
+                    <div style="color: var(--slate-500); font-size: 0.875rem;">
+                        <i class="fa-solid fa-calendar"></i> Posted on Dec 18, 2024
+                    </div>
+                </div>
+
+                <div class="announcement-card" style="background: white; padding: 1.5rem; border-radius: 12px; border-left: 4px solid #f59e0b; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <span class="announcement-badge" style="display: inline-block; padding: 0.25rem 0.75rem; background: #f59e0b; color: white; border-radius: 4px; font-size: 0.875rem; margin-bottom: 0.75rem;">Research</span>
+                    <h3 style="margin: 0.5rem 0; font-size: 1.25rem; color: var(--slate-900);">Research Grant Awarded</h3>
+                    <p style="color: var(--slate-600); margin-bottom: 0.75rem;">Department receives major grant for AI and cybersecurity research project.</p>
+                    <div style="color: var(--slate-500); font-size: 0.875rem;">
+                        <i class="fa-solid fa-calendar"></i> Posted on Dec 20, 2024
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="#announcements" class="btn btn-primary" style="display: inline-block; padding: 0.875rem 2rem; background: var(--brand-600); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: all 0.3s ease;">
+                    View All Announcements <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                </a>
+            </div>
+        </div>
+    </section>
     `;
 }
 
